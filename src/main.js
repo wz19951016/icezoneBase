@@ -2,7 +2,7 @@
  * @Author: wangzhong
  * @Date: 2020-07-01 23:23:28
  * @LastEditors: wangzhong
- * @LastEditTime: 2020-12-01 17:05:33
+ * @LastEditTime: 2020-12-02 18:08:06
  * @FilePath: /icezoneTemplate/src/main.js
  */
 
@@ -16,11 +16,15 @@ const init = async () => {
   {{#each apps}}
     loadingArray.push(
       loadApp(
-        "{{this}}",
-        "/{{this}}",
-        "/{{this}}/manifest.json",
-        "/{{this}}",
+        "{{this.name}}",
+        "/{{this.name}}",
+        "/{{this.name}}/manifest.json",
+        "/{{this.name}}",
+        {{#if this.hasStore}}
         true,
+        {{else}}
+        false,
+        {{/if}}
         globalEventDistributor
       )
     );
