@@ -2,7 +2,7 @@
  * @Author: wangzhong
  * @Date: 2020-06-16 14:43:59
  * @LastEditors: wangzhong
- * @LastEditTime: 2020-12-02 18:18:12
+ * @LastEditTime: 2020-12-02 18:46:54
  * @FilePath: /icezoneTemplate/src/Router.js
  */ 
 import React from "react";
@@ -15,7 +15,7 @@ const Router = () => {
     <BrowserRouter history={history}>
       <Switch>
         {{#each apps}}
-          <Route path="/this.name"/>
+          <Route path="/{{this.name}}"/>
         {{/each}}
         <Redirect to="/404" />
       </Switch>
