@@ -2,8 +2,8 @@
  * @Author: wangzhong
  * @Date: 2020-07-01 23:27:50
  * @LastEditors: wangzhong
- * @LastEditTime: 2020-09-16 17:38:12
- * @FilePath: /ice/webpack.config.js
+ * @LastEditTime: 2020-12-04 17:14:20
+ * @FilePath: /icezoneTemplate/webpack.config.js
  */
 
 const path = require("path");
@@ -73,23 +73,12 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     proxy: {
-      "/app1": {
-        target: "http://localhost:9001",
-        pathRewrite: { "^/app1": "" },
+      {{#each apps}}
+      "/{{this.name}}": {
+        target: "http://localhost:900{{this.index}}",
+        pathRewrite: { "^/app{{this.index}}": "" },
       },
-      "/app2": {
-        target: "http://localhost:9002",
-        pathRewrite: { "^/app2": "" },
-        logLevel: "debug",
-      },
-      "/app3": {
-        target: "http://localhost:9003",
-        pathRewrite: { "^/app3": "" },
-      },
-      "/app4": {
-        target: "http://localhost:9004",
-        pathRewrite: { "^/app4": "" },
-      },
+      {{/each}}
     },
     headers: {
       "Access-Control-Allow-Origin": "*",
