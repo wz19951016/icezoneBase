@@ -2,7 +2,7 @@
  * @Author: wangzhong
  * @Date: 2020-07-01 23:27:50
  * @LastEditors: wangzhong
- * @LastEditTime: 2020-12-04 17:14:20
+ * @LastEditTime: 2020-12-04 18:32:49
  * @FilePath: /icezoneTemplate/webpack.config.js
  */
 
@@ -74,7 +74,7 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       {{#each apps}}
-      "/{{this.name}}": {
+      "/{{this.name}}Route": {
         target: "http://localhost:900{{this.index}}",
         pathRewrite: { "^/app{{this.index}}": "" },
       },

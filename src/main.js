@@ -18,8 +18,8 @@ const init = async () => {
       loadApp(
         "{{this.name}}",
         "/{{this.name}}",
-        "/{{this.name}}/manifest.json",
-        "/{{this.name}}",
+        "/{{this.name}}Route/manifest.json",
+        "/{{this.name}}Route",
         {{#if this.hasStore}}
         true,
         {{else}}
