@@ -2,7 +2,7 @@
  * @Author: wangzhong
  * @Date: 2020-07-01 23:27:50
  * @LastEditors: wangzhong
- * @LastEditTime: 2020-12-04 18:32:49
+ * @LastEditTime: 2020-12-04 18:37:55
  * @FilePath: /icezoneTemplate/webpack.config.js
  */
 
@@ -76,7 +76,7 @@ module.exports = {
       {{#each apps}}
       "/{{this.name}}Route": {
         target: "http://localhost:900{{this.index}}",
-        pathRewrite: { "^/app{{this.index}}": "" },
+        pathRewrite: { "^/{{this.name}}Route": "" },
       },
       {{/each}}
     },
