@@ -3,7 +3,7 @@
  * @Date: 2020-06-29 16:52:36
  * @LastEditors: wangzhong
  * @description: 全局状态仓库类
- * @LastEditTime: 2020-12-07 14:20:15
+ * @LastEditTime: 2020-12-07 17:51:55
  * @FilePath: /icezoneTemplate/src/globalEventDistributor.js
  */
 
@@ -41,9 +41,6 @@ export class GlobalEventDistributor extends ToolClass {
   }
 
   dispatch(event) {
-    console.log("触发dispatch")
-    console.log(event)
-    console.log(this.getState())
     this.stores.forEach((s) => {
       s.dispatch(event);
       this.emit("dispatch");
