@@ -11,7 +11,7 @@
   "keywords": [],
   "singleChildren": [
     {{#each apps}}
-    "{{this.name}}"{{#if {{@index}} !== apps.length - 1}},{{/if}}
+    "{{this.name}}"{{#if @index !== apps.length - 1}},{{/if}}
     {{/each}}
   ],
   "author": "",
