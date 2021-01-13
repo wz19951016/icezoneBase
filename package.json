@@ -9,6 +9,11 @@
     "build": "webpack --mode production --env=production"
   },
   "keywords": [],
+  "singleChildren": [
+    {{#each apps}}
+    "{{this.name}}",
+    {{/each}}
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
